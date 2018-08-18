@@ -25,12 +25,12 @@
 				void function()
 				{
 					...
-					sprintf((char*)a,"Robot Asociation found at %d04",y);
+					sprintf((char*)a,"Robot Asociation was found at %d04",y);
 					LCD_P6x8Str(1,1,a);
 				}
 
 				则结果是会在屏幕上显示 
-				Robot Asociation found at 2007
+				Robot Asociation was found at 2007
 
 			2，LQKEY，按键及拨码开关驱动，其中函数主要有
 				1),KEY_Init,按键初始化，其中的引脚应对应实际板子引脚；
