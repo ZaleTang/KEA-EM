@@ -17,20 +17,7 @@
 		1，LQ12864 屏幕的驱动，其中主要函数有以下：
 			1)，LCD_Init,用于初始化，其中端口初始化部分里初始化的端口为实际板子上连接的端口。若需要在程序中启用屏幕，则必须先调用该函数对其进行初始化。
 			2），LCD_PutPixel，在屏幕上打印一个点，具体参数注释中有说明。
-			3），LCD_P6x8Str，LCD_P8x16Str等在注释中说明了参数，分别为xy坐标以及显示的字符串，注意第三个参数是一个字符串，也就是一个字符数组。如需要显示特定参数，需要用sprintf函数整合字符串，sprintf函数与printf函数接近。举例说明：
-			
-				unsigned char a[30]={"0"};
-				int y=2007;
-				LCD_Init();
-				void function()
-				{
-					...
-					sprintf((char*)a,"Robot Asociation was found at %d04",y);
-					LCD_P6x8Str(1,1,a);
-				}
-
-				则结果是会在屏幕上显示 
-				Robot Asociation was found at 2007
+			3），LCD_P6x8Str，LCD_P8x16Str等在注释中说明了参数，分别为xy坐标以及显示的字符串，注意第三个参数是一个字符串，也就是一个字符数组。如需要显示特定参数，需要用sprintf函数整合字符串，sprintf函数与printf函数接近。
 
 			2，LQKEY，按键及拨码开关驱动，其中函数主要有
 				1),KEY_Init,按键初始化，其中的引脚应对应实际板子引脚；
@@ -43,7 +30,7 @@
 				1),LED_Init,LED引脚初始化，这在龙邱的核心板上是固定死的，其他核心板上可能不一样，要根据实际情况却定引脚；
 				2),LED_Ctrl,LED控制，其中第一个参数为LED0-LED4以及LEDALL，同样是枚举类型，参照前面的KEY01234可以读懂，第二个是状态控制，分别为LEDON，LEDOF，LEDRVS，分别对应开，关，取反；
 		
-	三，common，CPU，CMSIS 其中common里的assert里面的函数在之前有介绍。其他为底层内核函数，包括开机底层初始化等，不必了解；
+	三，common，CPU，CMSIS 其中common里的assert里面的函数在之前有介绍。其他为底层内核函数，包括开机底层初始化等；
 
 	四，RAbuild，存放的是智能车竞赛相关的代码，也是最顶层的代码，是调车阶段需要去添加或改动的地方，其中：
 		1，System 存放的是系统初始化相关的函数，其中：
